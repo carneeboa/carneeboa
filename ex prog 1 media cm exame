@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+  float nota1, nota2, nota3, nota4, media;
+  printf("Digite quanto tirou na primeira prova: ");
+  scanf("%f",&nota1);
+  
+  printf("Digite quanto tirou na segunda prova: ");
+  scanf("%f",&nota2);
+  
+  printf("Digite quanto tirou na terceira prova: ");
+  scanf("%f",&nota3);
+  
+  printf("Digite quanto tirou na quarta prova: ");
+  scanf("%f",&nota4);
+  
+  media = (nota1 + nota2 + nota3 + nota4) / 4;
+  
+  if (media >= 7)
+    printf ("passou krai, ficou com %.1f",media);
+  if((media >= 4) && (media < 7))
+    printf ("vai fazer um exame pra ficar tranks, tirou %.1f",media);
+  if (media < 4) 
+      printf ("deu ruim jao, conseguiu nem pegar exame, ficou só com %.1f de media",media);
+    
+      
+  
+  
+  return 0;
+}
