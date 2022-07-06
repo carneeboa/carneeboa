@@ -1,0 +1,16 @@
+Fa ̧ca um programa que determine e mostre os 10 primeiros n ́umeros m ́ultiplos de 7 considerando
+n ́umeros maiores que 0.
+
+
+#include <stdio.h>
+int main() 
+{ 
+  int n1 ;
+  n1 = 7;
+  while (n1 != 77) {
+    printf("%d\n", n1);
+    n1 = n1+7;
+  }
+
+  return 0;
+}
