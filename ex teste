@@ -1,0 +1,18 @@
+#include <stdio.h> //ex q confere se a-b +5 é maior ou menor que a
+    int main(){
+        int n1, n2,n3;
+        printf ("Digite o numero n1 e n2\n");
+        scanf ("%i", &n1);
+        scanf ("%i", &n2);
+        n3 = (n1 - n2) + 5;
+        if (n3 > n1) 
+            printf ("%i é maior que %i\n", n3, n1);
+        
+        if (n3 < n1)
+            printf ("%i é menor que %i\n", n3, n1); 
+        
+       if (n3 == n1) 
+            printf ("são iguais\n");
+        
+            return 0;
+    }
