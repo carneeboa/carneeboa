@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+  int n1, n2, n3, n4, n5, n6, n7;
+  printf("Digite n1: ");
+  scanf("%i",&n1);
+  
+  printf("Digite n2: ");
+  scanf("%i",&n2);
+  
+  n3 = n1 % n2 ;
+  
+  if (n3 = 1)
+    n4 = n3 + n2 + n1;
+    printf ("%i", n4);
+  if (n3 = 2)
+    printf ("2");
+  if (n3 = 3) 
+    n4 = n1 + n2
+    n5 = n4 * n1
+      printf ("%i", n5);
+  if (n3 = 4) 
+      printf ("4");
+  if (n3 > 4) 
+      printf ("5"); 
+  else 
+     printf ("da zero noia");
+    
+      
+  
+  
