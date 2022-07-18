@@ -27,7 +27,9 @@ int main()
       printf ("%i", n4);
       break;}
   if (n3 > 4 || n3 == 0){
-      printf ("5");
+      n4 = (n1*n1);
+      n5 = (n2*n2);
+      printf ("%i %i", n4, n5);
       }
   
     
@@ -36,5 +38,4 @@ int main()
   
   return 0;
 }
-  
   
