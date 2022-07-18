@@ -10,21 +10,27 @@ int main()
   
   n3 = n1 % n2 ;
   
-  if (n3 = 1)
+  if (n3 = 1){
     n4 = n3 + n2 + n1;
-    printf ("%i", n4);
-  if (n3 = 2)
-    printf ("2");
-  if (n3 = 3) 
-    n4 = n1 + n2
-    n5 = n4 * n1
-      printf ("%i", n5);
-  if (n3 = 4) 
-      printf ("4");
-  if (n3 > 4) 
-      printf ("5"); 
+    printf ("%i", n4);}
+  else if (n3 = 2){
+    printf ("2");}
+  else if (n3 = 3) {
+    n4 = n1 + n2;
+    n5 = n4 * n1;
+      printf ("%i", n5);}
+  else if (n3 = 4) {
+      printf ("4");}
+  else if (n3 > 4) {
+      printf ("5");} 
   else 
      printf ("da zero noia");
+    
+      
+  
+  
+  return 0;
+}
     
       
   
