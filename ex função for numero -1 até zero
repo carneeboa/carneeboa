@@ -1,0 +1,13 @@
+#include <stdio.h>
+int tirar1(int valor){
+    for (;valor > 0; valor--){
+    printf ("o resultado e: %i \n", valor);}}
+
+int main ()
+{
+    int  valor, resul;
+    printf("digite o numero q quer os abaixo dele: \n");
+    scanf ("%i", &valor);
+    tirar1(valor);
+    return 0;
+}
