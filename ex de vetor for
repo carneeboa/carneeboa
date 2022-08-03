@@ -1,0 +1,17 @@
+#include <stdio.h>
+int tirar1(int valor){
+    for (;valor > 0; valor--){
+    printf ("o resultado e: %i \n", valor);}}
+
+int main ()
+{
+    int  A=5, i, vet[5];
+    for(i=0; i<6; i++){
+        printf("\n digite o numero %i \t", i);
+        scanf ("%d",&vet[i]);
+    }
+    for(i=0; i<6; i++){
+        printf("\n a posicao %d e igual a %d:", i, vet[i]);
+    }
+    return 0;
+}
