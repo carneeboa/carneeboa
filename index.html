@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>creating mailing system</title>
+	<style>
+		legend {
+			display: block;
+			padding-left: 2px;
+			padding-right: 2px;
+			border: none;
+		}
+        body{
+            background: linear-gradient(to bottom, #6ab7f5, #fff);
+            min-height: 100vh;
+        }
+	</style>
+	<script type="text/javascript">
+		function validateNome() {
+
+			var user = document.getElementById("nome").value;
+			var user2 = document.getElementById("nome");
+			var re = /^[A-Z][a-z].* [A-Z][a-z].*$/;
+			if (re.test(user)) {
+                user2.style.border = "green solid 3px";
+				return true;
+			}
+			else {
+				user2.style.border = "red solid 3px";
+				return false;
+			}
+		}
+		function validateSenha() {
+
+			var user = document.getElementById("senha").value;
+			var user2 = document.getElementById("senha");
+			var re = /^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$/;
+			if (re.test(user)) {
+                user2.style.border = "green solid 3px";
+				return true;
+			}
+			else {
+				user2.style.border = "red solid 3px";
+				return false;
+			}
+		}
+		function validateCpf() {
+
+			var user = document.getElementById("cpf").value;
+			var user2 = document.getElementById("cpf");
+			var re = /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/;
+			if (re.test(user)) {
+                user2.style.border = "green solid 3px";
+				return true;
+			}
+			else {
+				user2.style.border = "red solid 3px";
+				return false;
+			}
+		}
+		function validateEmail() {
+
+			var user = document.getElementById("email").value;
+			var user2 = document.getElementById("email");
+			var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if (re.test(user)) {
+                user2.style.border = "green solid 3px";
+				return true;
+			}
+			else {
+				user2.style.border = "red solid 3px";
+				return false;
+			}
+		}
+        function validateNumber() {
+
+            var user = document.getElementById("number").value;
+            var user2 = document.getElementById("number");
+            var re = /^[0-9]{2} ([0-9]{8}|[0-9]{9})$/;
+            if (re.test(user)) {
+                user2.style.border = "green solid 3px";
+                return true;
+            }
+        else {
+            user2.style.border = "red solid 3px";
+            return false;
+            }
+}
+
+	</script>
+    
+</head>
+
+<body>
+	<center>
+		<h1>Cadastro de Email</h1>
+		<form>
+			<fieldset style="width:300px">
+				<legend>Formulário</legend>
+				<table>
+					<tr>
+						<input type="text"
+							placeholder="Nome e Sobrenome"
+							maxlength="25"
+                            id="nome" 
+                            onkeyup="validateNome()">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="text"
+							placeholder="CPF" id="cpf" onkeyup="validateCpf()"> 
+					</tr>
+					<br><br>
+					<tr>
+						<input type="text"
+							placeholder="Email" id="email" onkeyup="validateEmail()">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="password" placeholder="Senha" id="senha" onkeyup="validateSenha()">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="text" placeholder="Telefone" id="number" onkeyup="validateNumber()" >
+					</tr>
+					<br><br>
+					<tr>
+						<label>Gênero:</label>
+						<select id="gender">
+							<option value="male">Masculino</option>
+							<option value="female">Feminino</option>
+							<option value="others">Outros</option>
+						</select>
+					</tr>
+					<br><br>
+					<tr><input type="submit"
+						onclick="validate()" value="Cadastrar">
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+	</center>
+</body>
+
+</html>
