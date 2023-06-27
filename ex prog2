@@ -1,0 +1,171 @@
+//CACHORRO
+public class BombaDeGasolina {
+    private double tanque = 5000;
+    private double precoLitro = 5.20;
+    private double litrosVendidos = 0;
+    private double valorVendas = 0;
+
+    public void abastecerPorLitro(double quantidadeLitros) {
+        if (quantidadeLitros <= tanque) {
+            tanque -= quantidadeLitros;
+            litrosVendidos += quantidadeLitros;
+            valorVendas += quantidadeLitros * precoLitro;
+        } else {
+            System.out.println("Quantidade de litros indisponível no tanque.");
+        }
+    }
+
+    public void abastecerPorDinheiro(double quantidadeReais) {
+        double quantidadeLitros = quantidadeReais / precoLitro;
+        if (quantidadeLitros <= tanque) {
+            tanque -= quantidadeLitros;
+            litrosVendidos += quantidadeLitros;
+            valorVendas += quantidadeReais;
+        } else {
+            System.out.println("Quantidade de litros indisponível no tanque.");
+        }
+    }
+
+    public double getStatus() {
+        return tanque;
+    }
+
+    // Getters e Setters para os atributos
+    public double getTanque() {
+        return tanque;
+    }
+
+    public void setTanque(double tanque) {
+        this.tanque = tanque;
+    }
+
+    public double getPrecoLitro() {
+        return precoLitro;
+    }
+
+    public void setPrecoLitro(double precoLitro) {
+        this.preco
+
+//MAINCA
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.cachorro;
+
+/**
+ *
+ * @author temporario
+ */
+public class Main {
+    
+    public static void main(String[] args) {
+        
+        Cachorro cachorro1 = new Cachorro();
+        cachorro1.setRaca("Labrador");
+        cachorro1.setNome("Max");
+        
+        System.out.println("Cachorro 1:");
+        System.out.println("Raça: " + cachorro1.getRaca());
+        System.out.println("Nome: " + cachorro1.getNome());
+        cachorro1.latir();
+        cachorro1.latirRepetido(3);
+        System.out.println();
+        
+        Cachorro cachorro 2 = new Cachorro("Bella");
+        System.out.println("Cachorro 2:");
+        System.out.println("Raça: " + cachorro2.getRaca());
+        System.out.println("Nome: " + cachorro2.getNome());
+        cachorro2.latir();
+        cachorro2.latirRepetido(5);
+        System.out.println();
+        
+        Cachorro cachorro 3 = new Cachorro("Viralata", "Suzi");
+        System.out.println("Cachorro 3:");
+        System.out.println("Raça: " + cachorro3.getRaca());
+        System.out.println("Nome: " + cachorro3.getNome());
+        cachorro3.latir();
+        cachorro3.latirRepetido(-2);
+        
+    }
+}
+//CONTAINER
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.container;
+
+/**
+ *
+ * @author temporario
+ */
+public class Container {
+
+    private double capacidade;
+    private boolean ocupado;
+
+public Container() {
+    this.capacidade = 0.0;
+    this.ocupado = ocupado;
+}
+public Container(double capacidade, boolean ocupado) {
+    this.capacidade = capacidade;
+    this.ocupado = ocupado;      
+}
+public double getCapacidade() {
+    return capacidade;
+}
+public void setCapacidade(double capacidade) {
+    this.capacidade = capacidade;
+}
+public boolean isOcupado() {
+    return ocupado;
+}
+public void setOcupado(boolean ocupado) {
+    this.ocupado = ocupado;
+}
+public boolean ocupar(double medida) {
+    if (medida <= capacidade && !ocupado) {
+        ocupado = true;
+        return true;
+    } else {
+        return false;}
+    }
+}
+
+
+//MAINCONTAINER
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.container;
+
+/**
+ *
+ * @author temporario
+ */
+public class Main {
+    
+    public static void main(String[]args) {
+        
+        Container container1 = new Container();
+        System.out.println("container 1 está ocupado? " + container1.isOcupado());
+        
+        Container container2 = new Container(120.0, true);
+        System.out.println("container 2 está ocupado? " + container2.isOcupado());
+        
+        container1.setCapacidade(50.0);
+        System.out.println("capacidade do container 1: " + container1.getCapacidade());
+        
+        boolean ocupouContainer1 = container1.ocupar(40.0);
+        System.out.println("Container 1 foi ocupado? " + ocupouContainer1);
+        
+        boolean ocupouContainer2 = container2.ocupar(1800.0);
+        System.out.println("Container 2 foi ocupado? " + ocupouContainer2);
+    }
+        
+        
+    
+}
