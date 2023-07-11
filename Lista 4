@@ -1,0 +1,300 @@
+#include <stdio.h>
+
+int verificarPrimo(int num) {
+    if (num <= 1) {
+        return 0;  // Números menores ou iguais a 1 não são primos
+    }
+
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return 0;  // O número é divisível por algum número diferente de 1 e ele mesmo
+        }
+    }
+
+    return 1;  // O número é primo
+}
+
+int main() {
+    int num;
+
+    printf("Digite um número inteiro: ");
+    scanf("%d", &num);
+
+    if (verificarPrimo(num)) {
+        printf("%d é um número primo.\n", num);
+    } else {
+        printf("%d não é um número primo.\n", num);
+    }
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+
+float calcularDelta(float a, float b, float c) {
+    return b * b - 4 * a * c;
+}
+
+void calcularRaizes(float a, float b, float c) {
+    float delta = calcularDelta(a, b, c);
+
+    if (delta > 0) {
+        float x1 = (-b + sqrt(delta)) / (2 * a);
+        float x2 = (-b - sqrt(delta)) / (2 * a);
+
+        printf("As raízes da equação são: x1 = %.2f, x2 = %.2f\n", x1, x2);
+    } else if (delta == 0) {
+        float x = -b / (2 * a);
+
+        printf("A raiz da equação é: x = %.2f\n", x);
+    } else {
+        printf("Não existem raízes reais.\n");
+    }
+}
+
+int main() {
+    float a, b, c;
+
+    printf("Digite os coeficientes da equação de segundo grau (ax^2 + bx + c = 0):\n");
+    printf("a: ");
+    scanf("%f", &a);
+    printf("b: ");
+    scanf("%f", &b);
+    printf("c: ");
+    scanf("%f", &c);
+
+    if (a == 0) {
+        printf("Não é uma equação de segundo grau.\n");
+    } else {
+        calcularRaizes(a, b, c);
+    }
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int calcularPotencia(int x, int n) {
+    int resultado = 1;
+
+    for (int i = 0; i < n; i++) {
+        resultado *= x;
+    }
+
+    return resultado;
+}
+
+int main() {
+    int x, n;
+
+    printf("Digite o valor de x: ");
+    scanf("%d", &x);
+
+    printf("Digite o valor de n: ");
+    scanf("%d", &n);
+
+    int potencia = calcularPotencia(x, n);
+
+    printf("%d elevado a %d é igual a %d\n", x, n, potencia);
+
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+
+float calcularMedia(float nota1, float nota2, char opcao) {
+    float media;
+
+    if (opcao == 'a') {
+        media = (nota1 + nota2) / 2
+    } else if (opcao == 'p') {
+        media = (3 * nota1 + 2 * nota2) / 5;  
+    } else if (opcao == 'h') {
+        media = 2 / ((1 / nota1) + (1 / nota2)); 
+    } else {
+        printf("Opção inválida.\n");
+        return -1;  // Retorna um valor inválido para indicar erro
+    }
+
+    return media;
+}
+
+int main() {
+    float nota1, nota2;
+    char opcao;
+
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+
+    printf("Digite a opção de cálculo da média (a - aritmética, p - ponderada, h - harmônica): ");
+    scanf(" %c", &opcao);
+
+    float media = calcularMedia(nota1, nota2, opcao);
+
+    if (media != -1) {
+        printf("A média é: %.2f\n", media);
+    }
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+float calcularIMC(float peso, float altura) {
+    float imc = peso / (altura * altura);
+    return imc;
+}
+
+void classificarIMC(float imc) {
+    if (imc < 18.5) {
+        printf("Abaixo do peso\n");
+    } else if (imc < 25.0) {
+        printf("Peso normal\n");
+    } else if (imc < 30.0) {
+        printf("Sobrepeso\n");
+    } else if (imc < 35.0) {
+        printf("Obesidade \n");
+}}
+
+int main() {
+    float peso, altura;
+
+    printf("Digite o peso (em kg): ");
+    scanf("%f", &peso);
+
+    printf("Digite a altura (em metros): ");
+    scanf("%f", &altura);
+
+    float imc = calcularIMC(peso, altura);
+    printf("O IMC é: %.2f\n", imc);
+
+    printf("Classificação: ");
+    classificarIMC(imc);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+void calcularTabuada(int numero) {
+    printf("Tabuada do %d:\n", numero);
+
+    for (int i = 1; i <= 10; i++) {
+        int resultado = numero * i;
+        printf("%d x %d = %d\n", numero, i, resultado);
+    }
+}
+
+int main() {
+    int numero;
+
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+
+    calcularTabuada(numero);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+void calcularDivisores(int numero) {
+    int contador = 0;
+
+    printf("Divisores de %d:\n", numero);
+
+    for (int i = 1; i <= numero; i++) {
+        if (numero % i == 0) {
+            printf("%d\n", i);
+            contador++;
+        }
+    }
+
+    printf("Quantidade de divisores: %d\n", contador);
+}
+
+int main() {
+    int numero;
+
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+
+    calcularDivisores(numero);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int converterParaSegundos(int horas, int minutos, int segundos) {
+    int totalSegundos = (horas * 3600) + (minutos * 60) + segundos;
+    return totalSegundos;
+}
+
+int main() {
+    int horas, minutos, segundos;
+
+    printf("Digite a hora (formato 24 horas): ");
+    scanf("%d", &horas);
+
+    printf("Digite os minutos: ");
+    scanf("%d", &minutos);
+
+    printf("Digite os segundos: ");
+    scanf("%d", &segundos);
+
+    int totalSegundos = converterParaSegundos(horas, minutos, segundos);
+
+    printf("O valor correspondente em segundos é: %d\n", totalSegundos);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int verificarVogal(char caractere) {
+    if (caractere == 'a' || caractere == 'e' || caractere == 'i' || caractere == 'o' || caractere == 'u' ||
+        caractere == 'A' || caractere == 'E' || caractere == 'I' || caractere == 'O' || caractere == 'U') {
+        return 1; 
+    } else {
+        return 0;  
+    }
+}
+
+int main() {
+    char caractere;
+
+    printf("Digite um caractere: ");
+    scanf("%c", &caractere);
+
+    if (verificarVogal(caractere)) {
+        printf("%c é uma vogal.\n", caractere);
+    } else {
+        printf("%c não é uma vogal.\n", caractere);
+    }
+
+    return 0;
+}
+
+
+
+
+
