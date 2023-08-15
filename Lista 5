@@ -1,59 +1,18 @@
 #include <stdio.h>
 
-int contarOcorrencias(int vetor[], int tamanho, int numero) {
-    int contador = 0;
-    for (int i = 0; i < tamanho; i++) {
-        if (vetor[i] == numero) {
-            contador++;
-        }
-    }
-    return contador;
-}
-
-int main() {
-    int tamanho;
-    printf("Digite o tamanho da sequência de números: ");
-    scanf("%d", &tamanho);
-
-    int vetor[tamanho];
-    
-    printf("Digite os números da sequência:\n");
-    for (int i = 0; i < tamanho; i++) {
-        scanf("%d", &vetor[i]);
-    }
-
-    int ultimoNumero = vetor[tamanho - 1]; // Último número da sequência
-    int totalOcorrencias = contarOcorrencias(vetor, tamanho, ultimoNumero);
-
-    printf("O último número lido é: %d\n", ultimoNumero);
-    printf("Total de ocorrências do último número: %d\n", totalOcorrencias);
-
-    return 0;
-}
-
-
-
-
-
-
-#include <stdio.h>
-
 int main() {
     int n;
 
-    
     printf("Digite o tamanho do vetor: ");
     scanf("%d", &n);
 
     int vetor[n];
 
-    
-    printf("Digite os elementos do vetor:\n");
+    printf("Digite os números do vetor:\n");
     for (int i = 0; i < n; i++) {
         scanf("%d", &vetor[i]);
     }
 
-    
     printf("Vetor na ordem inversa:\n");
     for (int i = n - 1; i >= 0; i--) {
         printf("%d ", vetor[i]);
@@ -66,39 +25,194 @@ int main() {
 
 
 
+#include <stdio.h>
+
+int main() {
+    int numeros[50];
+    int pares[50];
+    int impares[50];
+    int numPares = 0;
+    int numImpares = 0;
+
+    printf("Digite 50 números inteiros:\n");
+    for (int i = 0; i < 50; i++) {
+        scanf("%d", &numeros[i]);
+
+        if (numeros[i] % 2 == 0) {
+            pares[numPares] = numeros[i];
+            numPares++;
+        } else {
+            impares[numImpares] = numeros[i];
+            numImpares++;
+        }
+    }
+
+    printf("Números pares:\n");
+    for (int i = 0; i < numPares; i++) {
+        printf("%d ", pares[i]);
+    }
+    printf("\n");
+
+    printf("Números ímpares:\n");
+    for (int i = 0; i < numImpares; i++) {
+        printf("%d ", impares[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int numeros[21];
+    
+    printf("Digite 21 números inteiros:\n");
+    for (int i = 0; i < 21; i++) {
+        scanf("%d", &numeros[i]);
+    }
+
+    int ultimoNumero = numeros[20];
+    int presente = 0;
+
+    for (int i = 0; i < 20; i++) {
+        if (numeros[i] == ultimoNumero) {
+            printf("O último número %d está presente na posição %d do vetor.\n", ultimoNumero, i);
+            presente = 1;
+        }
+    }
+
+    if (!presente) {
+        printf("O último número %d não está presente nas primeiras 20 posições do vetor.\n", ultimoNumero);
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int numeros[100];  
+    int contador = 0;
+    int numero;
+
+    printf("Digite uma sequência de números. Digite -1 para encerrar:\n");
+
+    while (1) {
+        scanf("%d", &numero);
+        
+        if (numero == -1) {
+            break;  
+        }
+        
+        numeros[contador] = numero;
+        contador++;
+    }
+
+    int dentroIntervalo = 0;
+    for (int i = 0; i < contador; i++) {
+        if (numeros[i] >= 10 && numeros[i] <= 50) {
+            dentroIntervalo++;
+        }
+    }
+
+    printf("Quantidade de números dentro do intervalo [10, 50]: %d\n", dentroIntervalo);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+void mostrarMultiplosDeSete(int vetor[], int tamanho) {
+    printf("Números múltiplos de 7:\n");
+    for (int i = 0; i < tamanho; i++) {
+        if (vetor[i] % 7 == 0) {
+            printf("%d ", vetor[i]);
+        }
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+
+    printf("Digite o tamanho da sequência de números: ");
+    scanf("%d", &n);
+
+    int vetor[n];
+
+    printf("Digite a sequência de números:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &vetor[i]);
+    }
+
+    mostrarMultiplosDeSete(vetor, n);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int encontrarMaiorValor(int vetor[], int tamanho) {
+    int maior = vetor[0];
+    for (int i = 1; i < tamanho; i++) {
+        if (vetor[i] > maior) {
+            maior = vetor[i];
+        }
+    }
+    return maior;
+}
+
+int main() {
+    int n;
+
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &n);
+
+    int vetor[n];
+
+    printf("Digite os números do vetor:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &vetor[i]);
+    }
+
+    int maiorValor = encontrarMaiorValor(vetor, n);
+
+    printf("O maior valor no vetor é: %d\n", maiorValor);
+
+    return 0;
+}
+
 
 
 #include <stdio.h>
 
 int main() {
-    int numeros[50];
-    int par[50], impar[50]; // Vetores para armazenar pares e ímpares
-    int qtdPar = 0, qtdImpar = 0;
+    int totalPessoas;
+    printf("Digite o total de pessoas: ");
+    scanf("%d", &totalPessoas);
 
-    printf("Digite 50 números inteiros:\n");
-    for (int i = 0; i < 50; i++) {
-        scanf("%d", &numeros[i]);
-        
-        if (numeros[i] % 2 == 0) {
-            par[qtdPar] = numeros[i];
-            qtdPar++;
-        } else {
-            impar[qtdImpar] = numeros[i];
-            qtdImpar++;
+    int idades[totalPessoas];
+    int menosDe18 = 0;
+    int maisDe30 = 0;
+
+    printf("Digite as idades das pessoas:\n");
+
+    for (int i = 0; i < totalPessoas; i++) {
+        printf("Pessoa %d: ", i + 1);
+        scanf("%d", &idades[i]);
+
+        if (idades[i] < 18) {
+            menosDe18++;
+        } else if (idades[i] > 30) {
+            maisDe30++;
         }
     }
 
-    printf("\nNúmeros pares:\n");
-    for (int i = 0; i < qtdPar; i++) {
-        printf("%d ", par[i]);
-    }
-
-    printf("\nNúmeros ímpares:\n");
-    for (int i = 0; i < qtdImpar; i++) {
-        printf("%d ", impar[i]);
-    }
-
-    printf("\n");
+    printf("Total de pessoas com menos de 18 anos: %d\n", menosDe18);
+    printf("Total de pessoas com mais de 30 anos: %d\n", maisDe30);
 
     return 0;
 }
@@ -106,35 +220,77 @@ int main() {
 
 
 
+#include <stdio.h>
+
+void ordenarVetor(float vetor[], int tamanho) {
+    int i, j;
+    float temp;
+    
+    for (i = 0; i < tamanho - 1; i++) {
+        for (j = 0; j < tamanho - 1 - i; j++) {
+            if (vetor[j] > vetor[j + 1]) {
+                temp = vetor[j];
+                vetor[j] = vetor[j + 1];
+                vetor[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &n);
+
+    float vetor[n];
+
+    printf("Digite os números do vetor:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%f", &vetor[i]);
+    }
+
+    ordenarVetor(vetor, n);
+
+    printf("Vetor ordenado em ordem crescente:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%.2f ", vetor[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
 
 #include <stdio.h>
 
+void trocarElementos(int vetor[], int tamanho) {
+    if (tamanho < 20) {
+        printf("O vetor deve conter pelo menos 20 elementos.\n");
+        return;
+    }
+
+    for (int i = 0; i < 10; i++) {
+        int temp = vetor[i];
+        vetor[i] = vetor[i + 10];
+        vetor[i + 10] = temp;
+    }
+}
+
 int main() {
-    int numeros[21];
-    int ultimoNumero;
-    int presente = 0;
+    int vetor[20];
 
-    
-    printf("Digite 21 números inteiros:\n");
-    for (int i = 0; i < 21; i++) {
-        scanf("%d", &numeros[i]);
-    }
-
-    ultimoNumero = numeros[20]; // Último número da sequência
-
-    
-    printf("\nPosições onde o último número (%d) está presente:\n", ultimoNumero);
+    printf("Digite os 20 elementos do vetor:\n");
     for (int i = 0; i < 20; i++) {
-        if (numeros[i] == ultimoNumero) {
-            printf("%d ", i);
-            presente = 1;
-        }
+        scanf("%d", &vetor[i]);
     }
 
-    if (!presente) {
-        printf("O último número não está presente nos 20 primeiros números.");
-    }
+    trocarElementos(vetor, 20);
 
+    printf("Vetor resultante após a troca dos 10 primeiros com os 10 últimos:\n");
+    for (int i = 0; i < 20; i++) {
+        printf("%d ", vetor[i]);
+    }
     printf("\n");
 
     return 0;
