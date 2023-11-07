@@ -1,0 +1,154 @@
+#include <stdio.h>
+#define MAX 255
+
+int main() {
+    char str[MAX], character;
+    int count = 0;
+
+    printf("Entre com a string: ");
+    fgets(str, MAX, stdin);
+
+    printf("Entre com o caractere : ");
+    scanf(" %c", &character);
+
+    char *ptr = str; // Usamos um ponteiro para percorrer a string
+
+    for (int i = 0; *ptr != '\0'; i++) {
+        if (*ptr == character) {
+            printf("%d\n", i);
+            count++;
+        }
+        ptr++; // Avança para o próximo caractere na string
+    }
+
+    if (count == 0)
+        printf("-1\n");
+
+    return 0;
+}
+////////////////////////////////////////////
+
+#include <stdio.h>
+
+int main() {
+    char frase[] = "não gosto de programar em C";
+    char *ptr = frase;
+
+    while (*ptr != 'g' || *(ptr + 1) != 'o' || *(ptr + 2) != 's' || *(ptr + 3) != 't' || *(ptr + 4) != 'o') {
+        ptr++;
+    }
+
+    printf("%s\n", ptr);
+
+    return 0;
+}
+/////////////////////////////////////////////////////////////////////////
+
+
+
+#include <stdio.h>
+
+int encontraMaiorElemento(int vetor[], int tamanho, int *pos) {
+    if (tamanho <= 0) {
+        // Se o vetor estiver vazio, retorne um valor inválido (por exemplo, -1) e não modifique 'pos'
+        return -1;
+    }
+
+    int maior = vetor[0];
+    *pos = 0;
+
+    for (int i = 1; i < tamanho; i++) {
+        if (vetor[i] > maior) {
+            maior = vetor[i];
+            *pos = i;
+        }
+    }
+
+    return maior;
+}
+
+int main() {
+    int vetor[] = {10, 5, 7, 25, 3, 15};
+    int tamanho = sizeof(vetor) / sizeof(vetor[0]);
+    int pos;
+
+    int maior = encontraMaiorElemento(vetor, tamanho, &pos);
+
+    if (maior != -1) {
+        printf("Maior elemento: %d\n", maior);
+        printf("Posição do maior elemento: %d\n", pos);
+    } else {
+        printf("O vetor está vazio.\n");
+    }
+
+    return 0;
+}
+/////////////////////////////////////////////
+
+#include <stdio.h>
+
+int main() {
+    int matriz[4][4];
+    int x;
+
+    printf("Digite os elementos da matriz 4x4:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    printf("Digite o número x a ser procurado na matriz: ");
+    scanf("%d", &x);
+
+    int contador = 0;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (matriz[i][j] == x) {
+                contador++;
+            }
+        }
+    }
+
+    printf("O número %d aparece %d vezes na matriz.\n", x, contador);
+
+    return 0;
+}
+//////////////////////////////////////////
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <ctype.h>
+
+int totalPalavras(char *str) {
+    int total = 0;
+    bool emPalavra = false;
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (isalpha(str[i])) {
+            if (!emPalavra) {
+                emPalavra = true;
+                total++;
+            }
+        } else {
+            emPalavra = false;
+        }
+    }
+
+    return total;
+}
+
+int main() {
+    char str[101];
+
+    printf("Digite uma string de no máximo 100 caracteres: ");
+    fgets(str, sizeof(str), stdin);
+
+    int total = totalPalavras(str);
+
+    printf("Total de palavras na string: %d\n", total);
+
+    return 0;
+}
+
+
